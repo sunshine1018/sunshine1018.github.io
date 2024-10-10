@@ -1,0 +1,254 @@
+body {
+  min-width: 8.5333rem;
+  max-width: 20rem;
+  margin: 0 auto;
+  background-color: #f2f4f7;
+}
+
+a {
+  text-decoration: none;
+  color: #707070;
+}
+
+// 约束 当屏幕大于750px的时候，html字体大小就不变化了
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 37.5px !important;
+  }
+}
+
+.wrap {
+  background-color: #fff;
+  padding-bottom: 1.1467rem;
+}
+
+
+.header {
+  height: 2.1333rem;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+  line-height: 2.1333rem;
+  font-size: .9333rem;
+  color: #1c1c1c;
+}
+
+.nav {
+  display: flex;
+  // 显示不开就换行
+  flex-wrap: wrap;
+  padding: 1.2rem 0 1.6rem 0;
+
+  .item {
+    display: flex;
+    width: 33.33%;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 3.7067rem;
+      height: 3.7067rem;
+    }
+
+    span {
+      font-size: .6667rem;
+    }
+
+    // 选择前三个
+    &:nth-child(-n+3) {
+      margin-bottom: 1.6533rem;
+    }
+  }
+}
+
+// go模块
+.go {
+  margin: 0 .2667rem 0 .48rem;
+}
+
+// 两个模块类似，写一个公共样式
+.content {
+  padding: 1.0667rem .64rem;
+  background-color: #fff;
+  margin-top: .2667rem;
+
+  .con-hd {
+    display: flex;
+    // 两侧对齐
+    justify-content: space-between;
+    height: 1.0133rem;
+    line-height: 1.0133rem;
+    margin-bottom: .9067rem;
+
+    h4 {
+      margin: 0;
+      font-size: .7467rem;
+      color: #333;
+
+      .icon {
+        display: inline-block;
+        width: 1.0133rem;
+        height: 1.0133rem;
+        // 添加这个代码,可以让后面的文字垂直居中
+        vertical-align: middle;
+        // 微调,让其对的更齐
+        margin-top: -5px;
+      }
+
+    }
+
+    .more {
+      font-size: .5867rem;
+      color: #999;
+    }
+  }
+}
+
+.get_job_focus {
+  position: relative;
+
+  .swiper-container {
+    // width: 100%;
+    height: 100%;
+    // 根据需求把宽度定为540px
+    width: 14.4rem;
+    // pc端图片重叠正常但往左偏，但是放到iphone6/7/8就会布局错误
+    margin-left: 2.1333rem;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    transition: 300ms;
+    // 其余的兄弟是0.8，即80%的大小
+    transform: scale(0.8);
+    opacity: 0.4;
+
+    a {
+      width: 9.0133rem;
+      height: 10.0267rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+      width: 9.0133rem;
+      font-size: .6667rem;
+      margin-top: .64rem;
+      color: #333;
+    }
+  }
+
+  // 当前选定的slide
+  .swiper-slide-active,
+  .swiper-slide-duplicate-active {
+    transform: scale(1);
+    z-index: 999;
+    opacity: 1;
+  }
+}
+
+.study_con {
+  padding-bottom: 3.4667rem;
+}
+
+// 学习模块轮播图
+.study {
+
+  // 给盒子四周加边框不能新建一个新类名，这个类名必须是要js中function引用了的类名
+  .mySwiper {
+    padding: .2667rem;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    font-size: .48remx;
+    background: #fff;
+    // 取消flex布局，选择正常布局
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    width: 7.7333rem;
+    height: 9.0667rem;
+    background-color: #fff;
+    border-radius: .2667rem;
+    box-shadow: 0 0rem .2667rem rgba(0, 0, 0, .1);
+
+    h5 {
+      font-size: .6933rem;
+      margin: .5333rem .2667rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: .6933rem;
+      color: #ff4400;
+      margin-left: .2667rem;
+    }
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    // height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.footer {
+  // 一般页面里面都不加max/min-width 移动端布局自适应
+  position: fixed;
+  bottom: 0;
+  height: 2.9333rem;
+  width: 100%;
+  min-width: 8.5333rem;
+  max-width: 20rem;
+  z-index: 9999;
+  display: flex;
+  padding: .5333rem;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+
+  .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 1.04rem;
+      height: 1.0933rem;
+    }
+
+    p {
+      font-size: .5867rem;
+      color: #666;
+      margin-top: .2667rem;
+    }
+  }
+}
